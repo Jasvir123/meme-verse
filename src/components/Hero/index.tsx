@@ -10,6 +10,8 @@ export default async function Hero() {
   const res = await fetch("https://api.memegen.link/templates");
   const memes: Meme[] = await res.json();
 
+  const randomMemes: Meme[] = memes.sort(() => 0.5 - Math.random()).slice(0, 4);
+
   return (
     <main className="flex-1">
       {/* Hero Section */}
@@ -26,12 +28,19 @@ export default async function Hero() {
                   Join the largest meme community on the web.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" className="gap-1">
+              <div className="flex flex-col gap-4 min-[400px]:flex-row">
+                <Button
+                  size="lg"
+                  className="gap-1 flex items-center bg-secondary rounded-[8px] p-2"
+                >
                   <Sparkles className="h-4 w-4" />
                   Explore Memes
                 </Button>
-                <Button size="lg" variant="outline" className="gap-1">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="gap-1 flex items-center bg-secondary rounded-[8px] p-2"
+                >
                   <Upload className="h-4 w-4" />
                   Upload Yours
                 </Button>
@@ -39,44 +48,32 @@ export default async function Hero() {
             </div>
             <div className="mx-auto grid max-w-[400px] grid-cols-2 gap-3 lg:max-w-none">
               <div className="grid gap-3">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300"
-                    width={300}
-                    height={300}
-                    alt="Funny meme"
-                    className="aspect-square object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300"
-                    width={300}
-                    height={300}
-                    alt="Funny meme"
-                    className="aspect-square object-cover"
-                  />
-                </div>
+                {randomMemes.slice(0, 2).map((meme, index) => (
+                  <div
+                    key={`randomMeme-${index}`}
+                    className="overflow-hidden rounded-lg"
+                  >
+                    <img
+                      src={meme.example.url}
+                      alt={`Trending meme ${meme.id}`}
+                      className="aspect-square object-cover"
+                    />
+                  </div>
+                ))}
               </div>
               <div className="grid gap-3 pt-6">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300"
-                    width={300}
-                    height={300}
-                    alt="Funny meme"
-                    className="aspect-square object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300"
-                    width={300}
-                    height={300}
-                    alt="Funny meme"
-                    className="aspect-square object-cover"
-                  />
-                </div>
+                {randomMemes.slice(2, 4).map((meme, index) => (
+                  <div
+                    key={`randomMeme-${index}`}
+                    className="overflow-hidden rounded-lg"
+                  >
+                    <img
+                      src={meme.example.url}
+                      alt={`Trending meme ${meme.id}`}
+                      className="aspect-square object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -88,9 +85,6 @@ export default async function Hero() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
-                Features
-              </div>
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                 Everything You Need for Meme Mastery
               </h2>

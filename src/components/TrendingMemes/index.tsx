@@ -16,7 +16,6 @@ export default function TrendingMemes({ memes }: { memes: Meme[] }) {
 
   function showMoreMemes() {
     setPagination((prev) => ++prev);
-    console.log(pagination);
   }
 
   return (
