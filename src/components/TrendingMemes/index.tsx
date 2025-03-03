@@ -2,9 +2,9 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { FlameIcon, Sparkles, TrendingUp } from "lucide-react";
-import Button from "../ui/Button";
+import Button from "@/components/ui/Button";
 import { Meme } from "../../../types";
-import MemeCard from "./MemeCard";
+import MemeCard from "@/components/MemeCard";
 import { useState } from "react";
 
 export default function TrendingMemes({ memes }: { memes: Meme[] }) {
