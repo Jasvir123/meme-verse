@@ -1,15 +1,17 @@
 "use client";
 
 import { useTheme } from "@/context/ThemeContext";
+import Button from "../ui/Button";
 
 export default function ThemeToggle() {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <button
+    <Button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-secondary text-foreground hover:bg-accent transition-colors"
       aria-label="Toggle theme"
+      variant="outline"
+      size="icon"
     >
       {isDarkMode ? (
         <svg
@@ -40,6 +42,6 @@ export default function ThemeToggle() {
           />
         </svg>
       )}
-    </button>
+    </Button>
   );
 }

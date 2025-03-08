@@ -31,6 +31,7 @@ export default async function Hero() {
               <div className="flex flex-col gap-4 min-[400px]:flex-row">
                 <Button
                   size="lg"
+                  variant="outline"
                   className="gap-1 flex items-center rounded-[8px] p-2"
                 >
                   <Sparkles className="h-4 w-4" />

@@ -15,7 +15,7 @@
     --foreground: 0 0% 80%;    /* Light gray - hsl(0, 0%, 80%) */
     --text: 0 0% 90%;          /* Near white - hsl(0, 0%, 90%) */
     --muted: 0 0% 40%;         /* Darker gray - hsl(0, 0%, 40%) */
-    --accent: 40 80% 60%;      /* Lighter orange - hsl(40, 80%, 60%) */
+    --accent: 220 70% 60% / 90%;      /* Lighter orange - hsl(40, 80%, 60%) */
   }
 }
 
@@ -27,7 +27,7 @@
   --foreground: 0 0% 20%;    /* Dark gray - hsl(0, 0%, 20%) */
   --text: 0 0% 10%;          /* Near black - hsl(0, 0%, 10%) */
   --muted: 0 0% 60%;         /* Medium gray - hsl(0, 0%, 60%) */
-  --accent: 40 80% 50%;      /* Orange - hsl(40, 80%, 50%) */
+  --accent: 220 70% 50% / 90%;      /* Orange - hsl(40, 80%, 50%) */
 }
 
 /* Dark mode colors (manual toggle) */
@@ -38,7 +38,7 @@
   --foreground: 0 0% 80%;    /* Light gray - hsl(0, 0%, 80%) */
   --text: 0 0% 90%;          /* Near white - hsl(0, 0%, 90%) */
   --muted: 0 0% 40%;         /* Darker gray - hsl(0, 0%, 40%) */
-  --accent: 40 80% 60%;      /* Lighter orange - hsl(40, 80%, 60%) */
+  --accent: 220 70% 60% / 90%;      /* Lighter orange - hsl(40, 80%, 60%) */
 }
 
 /* Define custom utilities for Tailwind v4 */
